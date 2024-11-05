@@ -1,7 +1,7 @@
 ---
 title: "React Native만의 특징들"
 date: 2024-10-30
-desc: "React Native만이 가진 특징들에 대해서 소개합니다. 근데 이제 진짜 특징만 모은.."
+description: "React Native만이 가진 특징들에 대해서 소개합니다. 근데 이제 진짜 특징만 모은.."
 thumbnail: "https://github.com/user-attachments/assets/6988f083-1eaf-4e91-9856-9dca32ed54e5"
 ---
 
