@@ -32,7 +32,7 @@ PageView를 이용한 `Carousel Slider`의 동작 방식
 
 ### 코드
 
-```dart {16, 18, 28-29, 35-41, 45, 47, 49}
+```dart {16, 18, 28-29, 35-46, 50, 52, 54}
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -70,6 +70,11 @@ class _CarouselSliderState extends State<CarouselSlider> {
     return AspectRatio(
       aspectRatio: widget.aspectRatio,
       child: PageView(
+        onPageChanged: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
         controller: _pageController,
         children: widget.children,
       ),
@@ -109,6 +114,6 @@ class _CarouselSliderState extends State<CarouselSlider> {
 크게 두 가지가 있습니다.
 
 - infinite loop을 지원하지 않습니다. 현재 마지막에서 처음으로 돌아갈 때 왼쪽으로 쭉 다시 당기는 애니메이션을 볼 수 있습니다. 이를 무한으로 구현하게 개선하면 좋을 것 같습니다.
-- 현재 사용자가 스크롤 하여 조정하면 `_currentIndex` 값이 변경되어 반영되고 있지 않습니다. 사용자가 page를 변경할 때 혹은 변경하고 나면 현재 페이지를 `_currentIndex`에 반영해줄 필요가 있습니다.
+- ~~현재 사용자가 스크롤 하여 조정하면 `_currentIndex` 값이 변경되어 반영되고 있지 않습니다. 사용자가 page를 변경할 때 혹은 변경하고 나면 현재 페이지를 `_currentIndex`에 반영해줄 필요가 있습니다.~~ -반영 완료-
 
 -끗-
